@@ -5,8 +5,24 @@
 </template>
 
 <script>
+import { mapState, mapActions } from 'vuex'
+
 export default {
-  name: 'app'
+  name: 'app',
+  computed: {
+    ...mapState({
+      items: 'items'
+
+    })
+  },
+  mounted() {
+    this.FETCH_ITEMS();
+  },
+  methods: {
+    ...mapActions([
+        'FETCH_ITEMS'
+      ])
+  },
 }
 </script>
 

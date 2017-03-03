@@ -22,23 +22,23 @@
 
 <script>
 
-import { mapGetters, mapActions } from 'vuex'
+import { mapState, mapActions } from 'vuex'
 
 export default {
   name: 'mapContianer',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
     }
   },
+  computed: {
+    ...mapState({
+      items: 'items'
+
+    })
+  },
   mounted() {
-    this.FETCH_ITEMS();
-  },
-  methods: {
-    ...mapActions([
-        'FETCH_ITEMS'
-      ])
-  },
+
+  }
 }
 </script>
 
