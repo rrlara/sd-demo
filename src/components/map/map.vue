@@ -1,14 +1,12 @@
 <template>
   <div class="mapContainer">
       <el-menu theme="dark" class="el-menu-demo" mode="horizontal" >
-      <el-menu-item index="1">Map</el-menu-item>
-      <el-menu-item index="3">List</el-menu-item>
       <router-link to="/">
         <el-menu-item index="3">Home</el-menu-item>
       </router-link>
+      <el-menu-item index="1">Map</el-menu-item>
+      <el-menu-item index="3">List</el-menu-item>
     </el-menu>
-
-    <!-- <h2>orale</h2> -->
 
     <el-row class='containers'>
       <el-col :sm="18" :xs="24" class="map">
@@ -23,13 +21,24 @@
 </template>
 
 <script>
+
+import { mapGetters, mapActions } from 'vuex'
+
 export default {
   name: 'mapContianer',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
     }
-  }
+  },
+  mounted() {
+    this.FETCH_ITEMS();
+  },
+  methods: {
+    ...mapActions([
+        'FETCH_ITEMS'
+      ])
+  },
 }
 </script>
 
