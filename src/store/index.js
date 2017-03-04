@@ -7,7 +7,8 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
   state: {
     items: {},
-    currentCall: null
+    currentCall: null,
+    loading: false
   },
 
   actions: {
