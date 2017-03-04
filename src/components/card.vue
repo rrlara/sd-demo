@@ -49,8 +49,14 @@ export default {
 
 .el-card{
   margin-bottom: 10px;
-  /*color: gray;*/
+  color: gray;
 }
+
+.el-card:hover{
+  /*color: gray;*/
+  border: 1px solid #4FC08D;
+}
+
 .el-card__body {
     padding: 10px !important;
 }

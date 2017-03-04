@@ -3,6 +3,8 @@
     <el-row class='containers'>
       <el-col :sm="24" :xs="24" class="list" v-if="calls">
 
+      <h4>active calls are in green</h4>
+
       <card v-for="(call, index) in calls.features" :call="call" :key="index"></card>
 
       </el-col>
@@ -64,6 +66,7 @@ export default {
 .list{
   height: calc(100%);
   /*background-color: blue;*/
+  padding: 10px;
 }
 
 

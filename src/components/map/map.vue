@@ -5,6 +5,7 @@
         <div class="grid-content bg-purple"></div>
       </el-col>
       <el-col :sm="6" :xs="24" class="list">
+        <h4>active calls are in green</h4>
         <card v-for="(call, index) in calls.features" :call="call" :key="index"></card>
       </el-col>
     </el-row>
@@ -61,6 +62,7 @@ export default {
   height: calc(100%);
   /*background-color: blue;*/
   overflow: auto;
+  padding: 5px;
 }
 
 </style>

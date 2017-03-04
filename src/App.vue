@@ -18,7 +18,11 @@
         </el-button>
       </el-menu>
     <div class="pagesContainer">
+
+    <transition name="fade">
       <router-view></router-view>
+      </transition>
+
     </div>
   </div>
 </template>
@@ -63,5 +67,12 @@ body {
   float: right;
     margin-right: 20px;
     margin-top: 10px;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
+  opacity: 0
 }
 </style>
