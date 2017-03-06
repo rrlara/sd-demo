@@ -1,9 +1,9 @@
 <template>
-  <div class="mapContainer">
+  <div class="mapViewContainer">
     <navbar></navbar>
     <el-row class='containers'>
       <el-col :sm="18" :xs="24" class="map">
-        <div class="grid-content bg-purple"></div>
+        <map-time></map-time>
       </el-col>
       <el-col :sm="6" :xs="24" class="list">
         <h4>active calls are in green</h4>
@@ -20,11 +20,14 @@ import { mapState, mapActions } from 'vuex'
 import Nav from '../components/nav-bar'
 import Card from '../components/card'
 
+import Map from '../components/map'
+
 export default {
   name: 'mapContianer',
   components: {
     Card,
-    navbar: Nav
+    navbar: Nav,
+    mapTime: Map
   },
   data () {
     return {
@@ -45,7 +48,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
-.mapContainer{
+.mapViewContainer{
   position: absolute;
   width: 100%;
   left: 0;
@@ -58,7 +61,7 @@ export default {
   height: calc(100% - 0px);
 }
 .map{
-  height: calc(100%);
+  height: calc(100% - 0px);
   background-color: gray;
 }
 .list{
@@ -66,6 +69,7 @@ export default {
   /*background-color: blue;*/
   overflow: auto;
   padding: 5px;
+  position: relative;
 }
 
 </style>

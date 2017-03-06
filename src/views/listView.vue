@@ -1,8 +1,8 @@
 <template>
-  <div class="">
+  <div class="listContainer">
 
   <navbar></navbar>
-    <el-row class='containers'>
+    <el-row>
       <el-col :sm="24" :xs="24" class="list" v-if="calls">
 
       <h4>active calls are in green</h4>
@@ -53,26 +53,15 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
-.mapContainer{
-  position: absolute;
-  width: 100%;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  top: 0;
-}
-
-.containers{
+.listContainer{
   height: calc(100% - 60px);
-}
-.map{
-  height: calc(100%);
-  background-color: gray;
+  overflow: auto;
 }
 .list{
   height: calc(100%);
   /*background-color: blue;*/
   padding: 10px;
+  overflow: auto;
 }
 
 
