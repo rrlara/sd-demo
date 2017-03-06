@@ -1,12 +1,14 @@
 <template>
-  <div class="mapContainer">
+  <div class="">
+
+  <navbar></navbar>
     <el-row class='containers'>
-      <el-col :sm="18" :xs="24" class="map">
-        <div class="grid-content bg-purple"></div>
-      </el-col>
-      <el-col :sm="6" :xs="24" class="list">
-        <h4>active calls are in green</h4>
-        <card v-for="(call, index) in calls.features" :call="call" :key="index"></card>
+      <el-col :sm="24" :xs="24" class="list" v-if="calls">
+
+      <h4>active calls are in green</h4>
+
+      <card v-for="(call, index) in calls.features" :call="call" :key="index"></card>
+
       </el-col>
     </el-row>
   </div>
@@ -16,12 +18,16 @@
 
 import { mapState, mapActions } from 'vuex'
 
-import Card from '../card'
+import Nav from '../components/nav-bar'
+import Card from '../components/card'
+
+
 
 export default {
-  name: 'mapContianer',
-  components: {
-    Card
+  name: 'list',
+  components:{
+    Card,
+    navbar: Nav
   },
   data () {
     return {
@@ -35,6 +41,11 @@ export default {
   },
   mounted() {
 
+  },
+  methods: {
+    formatDate: function (date) {
+      return moment(date).format('MMMM Do YYYY, h:mm:ss a');
+    }
   }
 }
 </script>
@@ -48,11 +59,11 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  top: 60px;
+  top: 0;
 }
 
 .containers{
-  height: calc(100% - 0px);
+  height: calc(100% - 60px);
 }
 .map{
   height: calc(100%);
@@ -61,8 +72,10 @@ export default {
 .list{
   height: calc(100%);
   /*background-color: blue;*/
-  overflow: auto;
-  padding: 5px;
+  padding: 10px;
 }
+
+
+
 
 </style>

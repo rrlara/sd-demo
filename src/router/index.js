@@ -1,8 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Hello from '@/components/Hello'
-import Map from '@/components/map/map'
-import List from '@/components/list/list'
+
+import Hello from '@/views/homeView'
+import Map from '@/views/mapView'
+import List from '@/views/listView'
 
 Vue.use(Router)
 
