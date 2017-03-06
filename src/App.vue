@@ -40,6 +40,8 @@ export default {
   },
   mounted() {
     this.FETCH_ITEMS();
+
+    console.log(this.$router.currentRoute.path);
   },
   methods: {
     ...mapActions([
