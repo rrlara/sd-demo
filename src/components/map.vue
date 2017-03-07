@@ -46,7 +46,7 @@ export default {
 
         map = new mapboxgl.Map({
             container: 'map',
-            style: 'mapbox://styles/mapbox/light-v9',
+            style: 'mapbox://styles/mapbox/dark-v9',
             center: [-122.340331,47.6147624],
             zoom: 11
         });
@@ -72,7 +72,7 @@ export default {
                             type: 'categorical',
                             stops: [
                                 ['active', '#83d2af'],
-                                ['closed', 'gray']]
+                                ['closed', '#fff']]
                         }
                   }
                 });
@@ -88,7 +88,7 @@ export default {
                             type: 'categorical',
                             stops: [
                                 ['active', '#83d2af'],
-                                ['closed', 'gray']]
+                                ['closed', '#fff']]
                         }
                     }
                   });
@@ -103,8 +103,8 @@ export default {
                 "circle-radius": 11,
                 "circle-color": '#ffffff',
                 "circle-opacity": 0.1,
-                // "circle-stroke-color": '#4fc08d',
-                // "circle-stroke-width": 1
+                "circle-stroke-color": '#4fc08d',
+                "circle-stroke-width": 1
               },
                 "filter": ["==", "IncidentNumber", ""]
             });
