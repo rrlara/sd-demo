@@ -2,9 +2,11 @@
   <div class="nav-bar">
     <el-menu theme="dark" class="el-menu-demo" mode="horizontal" >
 
-        <router-link to="/">
-          <el-menu-item index="1">Home</el-menu-item>
-        </router-link>
+        <!-- <router-link to="/"> -->
+        <a href="/">
+        <el-menu-item index="1" >Home</el-menu-item>
+        </a>
+        <!-- </router-link> -->
         <router-link to="/map">
           <el-menu-item index="2">Map</el-menu-item>
         </router-link>
@@ -50,5 +52,16 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
+.el-menu-item{
+  color: #fff;
+  font-size: 20px;
+}
+
+.router-link-active li{
+  background-color: #83d2af;
+  color: #fff;
+  font-size: 20px;
+}
 
 </style>
