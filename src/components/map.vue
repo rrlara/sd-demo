@@ -22,10 +22,10 @@ export default {
 
     'currentCall': function () {
       if (this.currentCall) {
-          map.setFilter("call-outer-hl", ["==", "IncidentNumber", this.currentCall.properties.IncidentNumber]);
-          map.setFilter("call-hl", ["==", "IncidentNumber", this.currentCall.properties.IncidentNumber]);
 
+          map.setFilter("call-hl", ["==", "IncidentNumber", this.currentCall.properties.IncidentNumber]);
           map.flyTo({center: this.currentCall.geometry.coordinates});
+
       }
     }
   },
@@ -93,29 +93,13 @@ export default {
                     }
                   });
 
-
-          // Hightlights
-          map.addLayer({
-              "id": 'call-outer-hl',
-              "source": "call-points",
-              "type": "circle",
-              "paint": {
-                "circle-radius": 11,
-                "circle-color": '#ffffff',
-                "circle-opacity": 0.1,
-                "circle-stroke-color": '#4fc08d',
-                "circle-stroke-width": 1
-              },
-                "filter": ["==", "IncidentNumber", ""]
-            });
-
           map.addLayer({
               "id": 'call-hl',
               "source": "call-points",
               "type": "circle",
               "paint": {
-                "circle-radius": 8,
-                "circle-color": '#324157'
+                "circle-radius": 11,
+                "circle-color": '#20a0ff'
               },
                 "filter": ["==", "IncidentNumber", ""]
             });

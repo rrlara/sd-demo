@@ -97,7 +97,7 @@ export default {
 }
 
 .currCall {
-  background-color: #324157;
+  background-color: #20a0ff;
   color: #fff;
   /*font-weight: 600;*/
 }
