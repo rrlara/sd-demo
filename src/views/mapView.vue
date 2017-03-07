@@ -3,11 +3,15 @@
     <navbar></navbar>
     <el-row class='containers'>
       <el-col :sm="18" :xs="24" class="map">
-        <map-time></map-time>
+
+        <map-time v-if="calls.features"></map-time>
+
       </el-col>
       <el-col :sm="6" :xs="24" class="list">
+
         <h4>active calls are in green</h4>
         <card v-for="(call, index) in calls.features" :call="call" :key="index"></card>
+
       </el-col>
     </el-row>
   </div>

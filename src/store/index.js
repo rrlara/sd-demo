@@ -17,6 +17,11 @@ const store = new Vuex.Store({
 
       return fetchCalls().then(items => commit('SET_ITEMS', { items }))
 
+    },
+    CURRENT_CALL: ({ commit, state }, call) => {
+
+      commit('SET_CURRENT_CALL', { call })
+
     }
   },
 
@@ -25,6 +30,12 @@ const store = new Vuex.Store({
     SET_ITEMS: (state, { items }) => {
 
       state.items = items;
+
+    },
+
+    SET_CURRENT_CALL: (state, { call }) => {
+
+      state.currentCall = call;
 
     }
 

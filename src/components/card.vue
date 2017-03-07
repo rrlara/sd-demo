@@ -1,23 +1,22 @@
 
 <template>
 
-<div id="card">
+<div id="card" @click='CURRENT_CALL(call)'>
 
 	<el-card class="box-card"
-    :class="{ 'activeCall': call.properties.CallStatus == 'active' }">
+    :class="{ 'activeCall': call.properties.CallStatus == 'active', 'currCall' : makeActive(call) }">
 
-      <div slot="header" class="clearfix">
-        <span style="font-size: 20px;">{{call.properties.Type}}</span>
-      </div>
+      <span style="font-size: 20px;">{{call.properties.Type}}</span>
+
       <div class="text item">
-        <span style="font-size: 14px;">Units: {{call.properties.Units}}</span>
-      </div>
-      <div class="text item">
-        <span style="font-size: 14px;">{{formatDate(call.properties.DateTime)}}</span>
-      </div>
-      <div class="text item">
-        <span style="font-size: 14px;">{{call.properties.Address}}</span>
-      </div>
+          <span style="font-size: 14px;">Units: {{call.properties.Units}}</span>
+        </div>
+        <div class="text item">
+          <span style="font-size: 14px;">{{formatDate(call.properties.DateTime)}}</span>
+        </div>
+        <div class="text item">
+          <span style="font-size: 14px;">{{call.properties.Address}}</span>
+        </div>
 
     </el-card>
 
@@ -33,10 +32,31 @@ import moment from 'moment'
 export default {
   name: 'card',
   props: ['call'],
-  mounted() {
-
+  computed: {
+    ...mapState({
+      currentCall: 'currentCall'
+    })
   },
   methods: {
+    ...mapActions([
+        'CURRENT_CALL'
+      ]),
+
+    makeActive: function (item) {
+
+
+      if(this.currentCall) {
+
+        if ( item.properties.IncidentNumber == this.currentCall.properties.IncidentNumber ) {
+          return true
+        }else{
+          return false
+        }
+
+      }
+
+    },
+
     formatDate: function (date) {
       return moment(date).format('MMMM Do YYYY, h:mm:ss a');
     }
@@ -52,9 +72,14 @@ export default {
   color: gray;
 }
 
+.el-card__body {
+    padding: 20px;
+    display: none !important;
+}
+
 .el-card:hover{
   /*color: gray;*/
-  border: 1px solid #4FC08D;
+  /*border: 1px solid #4FC08D;*/
 }
 
 .el-card__body {
@@ -62,9 +87,17 @@ export default {
 }
 
 .activeCall {
-  background-color: #83d2af;
+  /*background-color: #83d2af;*/
+  /*color: #4FC08D;*/
+  border-left: 10px solid #83d2af;
+  border-right: 10px solid #83d2af;
+  /*font-weight: 600;*/
+}
+
+.currCall {
+  background-color: #324157;
   color: #fff;
-  font-weight: 600;
+  /*font-weight: 600;*/
 }
 
 
