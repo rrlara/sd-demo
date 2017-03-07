@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+
 import { fetchCalls } from './api'
 
 Vue.use(Vuex)

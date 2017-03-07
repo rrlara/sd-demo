@@ -2,11 +2,12 @@
   <div class="nav-bar">
     <el-menu theme="dark" class="el-menu-demo" mode="horizontal" >
 
-        <!-- <router-link to="/"> -->
+        <!-- ROUTE WITH HREF TAG -->
         <a href="/">
-        <el-menu-item index="1" >Home</el-menu-item>
+          <el-menu-item index="1" >Home</el-menu-item>
         </a>
-        <!-- </router-link> -->
+
+        <!-- ROUTE WITH VUE-ROUTER -->
         <router-link to="/map">
           <el-menu-item index="2">Map</el-menu-item>
         </router-link>
@@ -40,7 +41,6 @@ export default {
     })
   },
   mounted() {
-    // this.FETCH_ITEMS();
   },
   methods: {
     ...mapActions([
@@ -62,6 +62,16 @@ export default {
   background-color: #83d2af;
   color: #fff;
   font-size: 20px;
+}
+
+.el-menu--horizontal.el-menu--dark .el-menu-item:hover, .el-menu--horizontal.el-menu--dark .el-submenu__title:hover{
+  background-color: #83d2af;
+}
+
+.updateButton{
+  float: right;
+    margin-right: 20px;
+    margin-top: 10px;
 }
 
 </style>

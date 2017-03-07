@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <!-- <div class="pagesContainer"> -->
 
       <transition name="fade">
         <keep-alive>
@@ -8,19 +7,15 @@
         </keep-alive>
       </transition>
 
-    <!-- </div> -->
   </div>
 </template>
 
 <script>
 
-import { mapState, mapActions } from 'vuex'
+import { mapActions } from 'vuex'
 
 export default {
   name: 'app',
-  computed: {
-
-  },
   mounted() {
 
     this.FETCH_ITEMS();
@@ -45,19 +40,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  /*margin-top: 60px;*/
   position: absolute;
   top: 0px;
   bottom: 0px;
   width: 100%;
-  /*background-color: gray;*/
   overflow: hidden;
-}
-
-.updateButton{
-  float: right;
-    margin-right: 20px;
-    margin-top: 10px;
 }
 
 .fade-enter-active, .fade-leave-active {

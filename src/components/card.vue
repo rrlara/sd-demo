@@ -31,7 +31,9 @@ import moment from 'moment'
 
 export default {
   name: 'card',
+
   props: ['call'],
+
   computed: {
     ...mapState({
       currentCall: 'currentCall'

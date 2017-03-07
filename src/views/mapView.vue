@@ -1,15 +1,19 @@
 <template>
   <div class="mapViewContainer">
+    <!-- NAV-BAR COMOPONENT -->
     <navbar></navbar>
     <el-row class='containers'>
       <el-col :sm="18" :xs="24" class="map">
 
+        <!-- MAP COMOPONENT -->
         <map-time v-if="calls.features"></map-time>
 
       </el-col>
       <el-col :sm="6" :xs="24" class="list">
 
         <h4>active calls are in green</h4>
+
+        <!-- CARD COMOPONENT -->
         <card v-for="(call, index) in calls.features" :call="call" :key="index"></card>
 
       </el-col>
@@ -19,11 +23,10 @@
 
 <script>
 
-import { mapState, mapActions } from 'vuex'
+import { mapState } from 'vuex'
 
 import Nav from '../components/nav-bar'
 import Card from '../components/card'
-
 import Map from '../components/map'
 
 export default {

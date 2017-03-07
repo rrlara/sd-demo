@@ -1,12 +1,15 @@
 <template>
   <div class="listContainer">
 
+  <!-- NAV-BAR COMOPONENT -->
   <navbar></navbar>
+
     <el-row>
       <el-col :sm="24" :xs="24" class="list" v-if="calls">
 
       <h4>active calls are in green</h4>
 
+      <!-- CARD COMOPONENT -->
       <card v-for="(call, index) in calls.features" :call="call" :key="index"></card>
 
       </el-col>
@@ -16,7 +19,7 @@
 
 <script>
 
-import { mapState, mapActions } from 'vuex'
+import { mapState } from 'vuex'
 
 import Nav from '../components/nav-bar'
 import Card from '../components/card'
@@ -43,9 +46,7 @@ export default {
 
   },
   methods: {
-    formatDate: function (date) {
-      return moment(date).format('MMMM Do YYYY, h:mm:ss a');
-    }
+
   }
 }
 </script>
